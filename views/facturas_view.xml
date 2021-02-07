@@ -1,0 +1,53 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="laboratorio_dental.facturas_tree">
+            <field name="name">Facturas</field>
+            <field name="model">laboratorio_dental.facturas_model</field>
+            <field name="arch" type="xml">
+            
+              <tree>
+                <field name="ref"/>
+                <field name="fecha"/>
+                <field name="iva"/>
+                <field name="base"/>
+                <field name="total"/>
+
+
+              </tree>
+            </field>
+          </record>
+
+
+          <record model="ir.ui.view" id="laboratorio_dental.facturas_form">
+            <field name="name">Formulario de facturas</field>
+            <field name="model">laboratorio_dental.facturas_model</field>
+            <field name="arch" type="xml">
+              <form >
+                <sheet>
+                    <group>
+                        <field name="ref"/>
+                        <field name="fecha"/>
+                        <field name="iva"/>
+                        <field name="base"/>
+                        <field name="total"/>
+                    </group>
+                    
+                </sheet>
+              </form>
+            </field>
+          </record>
+
+
+         
+
+
+          <record model="ir.actions.act_window" id="laboratorio_dental.action_window_facturas">
+            <field name="name">Facturas</field>
+            <field name="res_model">laboratorio_dental.facturas_model</field>
+            <field name="view_mode">tree,form</field>
+          </record>
+
+        
+        </data>
+        </odoo>

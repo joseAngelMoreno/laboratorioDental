@@ -1,0 +1,134 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="laboratorio_dental.trabajadores_tree">
+            <field name="name">Trabajadores</field>
+            <field name="model">laboratorio_dental.trabajadores_model</field>
+            <field name="arch" type="xml">
+            
+              <tree>
+                
+                <field name="name"/>
+                <field name="apellidos"/>
+                <field name="dni"/>
+                
+                
+              </tree>
+            </field>
+          </record>
+
+
+          <record model="ir.ui.view" id="laboratorio_dental.listado_trabajadores_form">
+            <field name="name">Formulario de trabajadores</field>
+            <field name="model">laboratorio_dental.trabajadores_model</field>
+            <field name="arch" type="xml">
+              <form >
+                <sheet>
+                <group name="0">
+                    <group name="1">
+                      <field name="numEmpleado" />
+                      <field name="name" class="oe_inline"/>
+                      <field name="apellidos" class="oe_inline"/>
+                      <field name="edad"/>
+                      
+
+                      <label for="dni" class="oe_edit_only"/>
+                      <h1><field name="dni"/></h1>
+                      <field name="poblacion" />
+                      
+              
+                    </group>
+                    <group name="2">
+                      <field name="foto" widget="image" width="150" heigth="150"/>
+                      <field name="fechaAlta"/>
+                      <field name="email" widget="email"/>
+                      <field name="telefono" widget="phone"/>
+                    </group>
+                 
+
+                </group>
+                </sheet>
+              </form>
+            </field>
+          </record>
+
+
+          <record model="ir.ui.view" id="laboratorio_dental.kanban_trabajadores" >
+
+            <field name="name">Listado de Trabajadores</field>
+           
+            <field name="model">laboratorio_dental.trabajadores_model</field>
+           
+            <field name="arch" type="xml">
+           
+            <kanban class="o_res_partner_kanban" >
+           
+            <field name="dni"/>
+           
+            <field name="name"/>
+           
+            <field name="foto"/>
+           
+            <field name="apellidos"/>
+           
+            <field name="email"/>
+           
+            <field name="telefono"/>
+            <field name="poblacion"/>
+           
+            <templates>
+           
+            <t t-name="kanban-box">
+           
+            <div t-attf-class="oe_kanban_global_click">
+           
+            <div class="o_kanban_image">
+           
+            <field name="foto" nolabel="1" widget="image" class="oe_right oe_avatar" />
+           
+            </div>
+           
+            <div class="oe_kanban_details">
+           
+            <strong>
+           
+            <field name="apellidos" class="oe_inline"/>, <field name="name" class="oe_inline"/>
+           
+            </strong>
+           
+            <div t-if="record.telefono.value">
+           
+            <t t-esc="record.telefono.value"/>
+           
+            </div>
+           
+            <div t-if="record.poblacion.value">
+           
+            <t t-esc="record.poblacion.value"/>
+           
+            </div>
+           
+            </div>
+           
+            </div>
+           
+            </t>
+           
+            </templates>
+           
+            </kanban>
+           
+            </field>
+           
+            </record>
+
+
+          <record model="ir.actions.act_window" id="laboratorio_dental.action_window_trabajadores">
+            <field name="name">Trabajadores</field>
+            <field name="res_model">laboratorio_dental.trabajadores_model</field>
+            <field name="view_mode">kanban,tree,form</field>
+          </record>
+
+        
+        </data>
+        </odoo>
