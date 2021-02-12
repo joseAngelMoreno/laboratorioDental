@@ -3,6 +3,9 @@ from datetime import datetime,date
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
 import re
+import random
+
+
 class trabajadores_model(models.Model):
     _name = 'laboratorio_dental.trabajadores_model'
     _description = 'Modelo de trabajadores'
@@ -23,6 +26,7 @@ class trabajadores_model(models.Model):
     email=fields.Char(string="Email")
     telefono=fields.Char(string="Telefono",required=True,size=9)
     foto=fields.Binary(string="Foto")
+    clientes=fields.Many2many("laboratorio_dental.clientes_model",relation="tra2cli_rel",string="clientes")
 
     @api.constrains("edad")
     def esMayor(self):
@@ -48,6 +52,12 @@ class trabajadores_model(models.Model):
             else:
                 raise ValidationError("telefono no puede tener letras")
 
+    
+    def numEmpleadoAleatorio(self):
+        self.numEmpleado=random.randrange(1, 100)
+        
+            
+        
 
     @api.constrains("dni")
     def checkDni(self):

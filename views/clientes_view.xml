@@ -25,27 +25,72 @@
             <field name="arch" type="xml">
               <form >
                 <sheet>
-                <group name="0">
-                    <group name="1">
+                  <notebook>
+                
+                   
+
+                    <page string="Datos Clientes" style="color:#a256a0;" >
+                      <group>
+                      <group>
+                      
                       <label for="name" class="oe_edit_only"/>
                       <h1><field name="name"/></h1>
                       <field name="cliente_id" />
                       <field name="poblacion"/>
                       <field name="nif"/>
-                     
-                      
-              
                     </group>
-                    <group name="2">
+                    <group>
                       <label for="foto" class="oe_edit_only"/>
-                      <field name="foto" widget="image" width="150" heigth="150"/>
-                     
+                      <field name="foto" widget="image" />
                       <field name="email" widget="email"/>
                       <field name="telefono" widget="phone"/>
                     </group>
-                 
+                  </group>
+                    </page>
+                    
+                    <page string="Facturas Cliente">    
+                      <field name="facturas" >
+                      <tree>
+                        <field name="ref"/>
+                        <field name="fecha"/>
+                        <field name="base"/>
+                        <field name="iva"/>
+                        <field name="total"/>
+                        
+                        
+                      </tree>
+                    </field>
+                    </page>
 
-                </group>
+
+
+
+
+                    <page string="Trabajadores Asignados"> 
+                      
+                      <field name="trabajadores" >
+                   
+                        <tree >
+                    
+                          <field name="name"/>
+                          <field name="apellidos"/>
+                          <field name="telefono"/>
+                          
+    
+                        </tree> 
+                      
+                        </field>
+
+                      
+                      
+                    </page>
+
+
+
+
+
+
+              </notebook>
                 </sheet>
               </form>
             </field>

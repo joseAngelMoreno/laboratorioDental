@@ -8,7 +8,8 @@
             
               <tree>
                 <field name="ref"/>
-                <field name="fecha"/>
+                <field name="fechaPedido"/>
+                <field name="fechaEntrega"/>
                 <field name="iva"/>
                 <field name="base"/>
                 <field name="total"/>
@@ -25,19 +26,31 @@
                 <sheet>
                     <group>
                         <field name="ref"/>
-                        <field name="fecha"/>
+                        
+                        <field name="fechaPedido"/>
+                        <field name="fechaEntrega"/>
                         <field name="iva"/>
                         <field name="base"/>
                         <field name="total"/>
+                       
                     </group>
+                    <group>
+                      <field name="detallepedido" >
+                   
+                        <tree >
+                          <field name="productos"/>
+                          <field name="cantidad">
+                          
+                        </field >
+                        </tree> 
+                      
+                        </field>
+                      </group>   
                     
                 </sheet>
               </form>
             </field>
           </record>
-
-
-         
 
 
           <record model="ir.actions.act_window" id="laboratorio_dental.action_window_pedidos">

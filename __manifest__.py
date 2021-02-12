@@ -10,7 +10,7 @@
         Long description of module's purpose
     """,
 
-    'author': "My Company",
+    'author': "Jose Angel",
     'website': "http://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
@@ -32,6 +32,7 @@
         'views/pedidos_view.xml',
         'views/productos_view.xml',
         'views/facturas_view.xml',
+        
         'views/menu.xml'
         
     ],

@@ -6,11 +6,14 @@
             <field name="model">laboratorio_dental.trabajadores_model</field>
             <field name="arch" type="xml">
             
-              <tree>
+              <tree decoration-danger="len(clientes) &gt; 0" >
                 
                 <field name="name"/>
                 <field name="apellidos"/>
                 <field name="dni"/>
+                <field name="poblacion"/>
+                <field name="telefono"/>
+                <field name="clientes"/>
                 
                 
               </tree>
@@ -22,8 +25,62 @@
             <field name="name">Formulario de trabajadores</field>
             <field name="model">laboratorio_dental.trabajadores_model</field>
             <field name="arch" type="xml">
+              
               <form >
                 <sheet>
+                  
+                  <notebook>
+                   
+                  <page string="Datos Trabajadores" style="color:#a256a0;" >
+                    <header>
+                      <button name="numEmpleadoAleatorio" type="object" string="Generar Num Empleado" class="oe_highlight" />
+                    </header>
+                    <group>
+                    <group>
+                    
+                      <field name="numEmpleado" />
+                      <field name="name" />
+                      <field name="dni"/>
+                      <field name="apellidos" />
+                      <field name="edad"/>
+                      <field name="poblacion"/>
+                  </group>
+                  <group>
+                    <field name="foto" widget="image" width="150" heigth="150"/>
+                      <field name="fechaAlta"/>
+                      <field name="email" widget="email"/>
+                      <field name="telefono" widget="phone"/>
+                  </group>
+                </group>
+                  </page>
+
+
+                  <page string="Clientes Asignados"> 
+                    
+                    <field name="clientes" >
+                   
+                    <tree >
+                
+                      <field name="name"/>
+                      <field name="poblacion"/>
+                      <field name="telefono"/>
+                      
+
+                    </tree> 
+                  
+                    </field>
+                  
+                  </page>
+
+                </notebook>
+              </sheet>
+            </form>
+          </field>
+        </record>
+
+
+
+        <!--    
                 <group name="0">
                     <group name="1">
                       <field name="numEmpleado" />
@@ -44,13 +101,10 @@
                       <field name="email" widget="email"/>
                       <field name="telefono" widget="phone"/>
                     </group>
-                 
 
                 </group>
-                </sheet>
-              </form>
-            </field>
-          </record>
+              -->
+            
 
 
           <record model="ir.ui.view" id="laboratorio_dental.kanban_trabajadores" >
