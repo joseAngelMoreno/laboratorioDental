@@ -7,10 +7,32 @@ class detaFac_model(models.Model):
     _name = 'laboratorio_dental.detafac_model'
 
     facturas_id = fields.Many2one("laboratorio_dental.facturas_model", "Factura")
-    precios_id = fields.Many2one("laboratorio_dental.precios_model", "Nombre del producto")
-    cantidad =fields.Selection(string="Cantidad",selection=[("1","1"),("2","2"),("3","3"),("4","4"),("5","5")] )
-    
-   
+    precios_id = fields.Many2one("laboratorio_dental.precios_model", "Producto")
+    cantidad =fields.Integer(string="Cantidad",default=1,required=True)
+    iva=fields.Selection(string="IVA",default="0",selection=[("21","21"),("10","10"),("4","4"),("0","0")] )
+    base=fields.Float(string="Base",default=0,compute="calculaBase", store=True)
+    total=fields.Float(string="Total",default=0,compute="calculaBase", store=True)
+
+
+
+    #esto no me lo hace en el form de factura
+    @api.depends('precios_id','cantidad','iva')
+    def calculaBase(self):
+        #self.ensure_one()
+        self.base=self.precios_id.precio*self.cantidad
+        self.total = (((self.base*int(self.iva))/100)+self.base)
+
+    """
+    @api.depends('iva', 'precios_id','cantidad')
+    def calculaTotal(self):
+        self.ensure_one()
+        self.total = (((self.base*int(self.iva))/100)+self.base)
+
+    """
+
+
+
+  
 
 
     

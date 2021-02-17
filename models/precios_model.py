@@ -14,6 +14,5 @@ class precios_model(models.Model):
     @api.constrains("precio")
     def preciominimo(self):
         self.ensure_one()
-        
         if self.precio <= 0:
             raise ValidationError("El precio del producto no puede ser 0")

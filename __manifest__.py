@@ -32,7 +32,8 @@
         'views/pedidos_view.xml',
         'views/productos_view.xml',
         'views/facturas_view.xml',
-        
+        'views/detafac_view.xml',
+        'views/detallepedido_view.xml',
         'views/menu.xml'
         
     ],

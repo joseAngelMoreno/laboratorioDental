@@ -11,6 +11,7 @@
       <menuitem name="Listado Precios" id="laboratorio_dental.menu_precios" parent="laboratorio_dental.menu_ventas" action="laboratorio_dental.action_window_precios"/> 
       <menuitem name="Facturas" id="laboratorio_dental.menu_facturas" parent="laboratorio_dental.menu_ventas" action="laboratorio_dental.action_window_facturas"/> 
 
+      
       <menuitem name="Compras" id="laboratorio_dental.menu_compras" parent="laboratorio_dental.menu_root" />
       <menuitem name="Listado de Productos" id="laboratorio_dental.menu_productos" parent="laboratorio_dental.menu_compras" action="laboratorio_dental.action_window_productos"/> 
       <menuitem name="Pedidos" id="laboratorio_dental.menu_pedidos" parent="laboratorio_dental.menu_compras" action="laboratorio_dental.action_window_pedidos"/> 

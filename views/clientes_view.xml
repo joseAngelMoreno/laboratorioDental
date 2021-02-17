@@ -54,7 +54,7 @@
                         <field name="ref"/>
                         <field name="fecha"/>
                         <field name="base"/>
-                        <field name="iva"/>
+                        <field name="descuento"/>
                         <field name="total"/>
                         
                         

@@ -12,7 +12,7 @@ class clientes_model(models.Model):
     nif=fields.Char(string="NIF del cliente",required=True,index=True)
     cliente_id=fields.Char(string="Cliente id",required=True,size=25)
     poblacion=fields.Char(string="Poblacion",required=True)
-    email=fields.Char(string="Email")
+    email=fields.Char(string="Email",required=True)
     telefono=fields.Char(string="Telefono",required=True,size=9)
     foto=fields.Binary(string="Foto")
     facturas=fields.One2many("laboratorio_dental.facturas_model","cliente_id",string="factura")
