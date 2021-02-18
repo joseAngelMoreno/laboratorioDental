@@ -39,6 +39,12 @@ class clientes_model(models.Model):
                 raise ValidationError("telefono no puede tener letras")
 
 
+    def eliminaFacturas(self):
+        for i in self.facturas:
+            self.ensure_one
+            i.unlink()
+
+
 
     @api.constrains("nif")
     def checkNif(self):

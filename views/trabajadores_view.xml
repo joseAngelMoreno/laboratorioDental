@@ -13,7 +13,7 @@
                 <field name="dni"/>
                 <field name="poblacion"/>
                 <field name="telefono"/>
-                <field name="clientes"/>
+                <field name="clientes" widget="many2many_tags"/>
                 
                 
               </tree>
@@ -42,7 +42,7 @@
                       <field name="name" />
                       <field name="dni"/>
                       <field name="apellidos" />
-                      <field name="edad"/>
+                      
                       <field name="poblacion"/>
                   </group>
                   <group>

@@ -18,7 +18,7 @@ class detaFac_model(models.Model):
     #esto no me lo hace en el form de factura
     @api.depends('precios_id','cantidad','iva')
     def calculaBase(self):
-        #self.ensure_one()
+        self.ensure_one()
         self.base=self.precios_id.precio*self.cantidad
         self.total = (((self.base*int(self.iva))/100)+self.base)
 

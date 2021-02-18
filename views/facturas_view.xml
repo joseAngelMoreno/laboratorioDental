@@ -50,7 +50,7 @@
               <form >
                 <header>
                   <button name="cambiaEstado" type="object" string="Cambia Estado" class="oe_highlight" />
-                  <button name="limpiaPagadas" type="object" string="Archivar Facturas Pagadas" />
+                  <button name="limpiaPagadas" type="object" string="Archivar Facturas Pagadas" class="oe_highlight"/>
                 </header>
                 <sheet>
                   <group >

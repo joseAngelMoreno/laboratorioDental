@@ -20,7 +20,7 @@ class trabajadores_model(models.Model):
     apellidos=fields.Char(string="Apellidos",required=True)
     numEmpleado=fields.Integer(string="NumEmpleado",required=True,index=True)
     dni=fields.Char(string="DNI",required=True,index=True,size=9)
-    edad=fields.Integer(string="Edad",required=True)
+    
     fechaAlta=fields.Date(string="FechaAlta",default=lambda self:date.today(),required=True)
     poblacion=fields.Char(string="Poblacion",required=True)
     email=fields.Char(string="Email")
@@ -28,10 +28,7 @@ class trabajadores_model(models.Model):
     foto=fields.Binary(string="Foto")
     clientes=fields.Many2many("laboratorio_dental.clientes_model",relation="tra2cli_rel",string="clientes")
 
-    @api.constrains("edad")
-    def esMayor(self):
-        if self.edad<16:
-            raise ValidationError("Debe tener al menos 16 años")
+    
 
 
     @api.constrains("email")
