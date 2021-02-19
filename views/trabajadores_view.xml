@@ -42,7 +42,7 @@
                       <field name="name" />
                       <field name="dni"/>
                       <field name="apellidos" />
-                      
+                      <field name="edad" />
                       <field name="poblacion"/>
                   </group>
                   <group>
@@ -175,7 +175,6 @@
             </field>
            
             </record>
-
 
           <record model="ir.actions.act_window" id="laboratorio_dental.action_window_trabajadores">
             <field name="name">Trabajadores</field>

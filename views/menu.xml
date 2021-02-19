@@ -2,6 +2,7 @@
     <data>
       <menuitem name="Gestion Laboratorio Dental" id="laboratorio_dental.menu_root" />
       
+      
       <menuitem name="Empleados" id="laboratorio_dental.menu_trabajadores" parent="laboratorio_dental.menu_root" action="laboratorio_dental.action_window_trabajadores"/> 
       
       <menuitem name="Clientes" id="laboratorio_dental.menu_clientes" parent="laboratorio_dental.menu_root" action="laboratorio_dental.action_window_clientes"/> 

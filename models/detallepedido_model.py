@@ -16,7 +16,7 @@ class detallepedido_model(models.Model):
     total=fields.Float(string="Total",default=0)
     base=fields.Float(string="Base",default=0,compute="calculaBase", store=True)
     total=fields.Float(string="Total",default=0,compute="calculaBase", store=True)
-    #precio=fields.Float(string="Precio",compute="precioid", store=True)
+    precio=fields.Float(string="Precio Unidad",compute="calculaBase", store=True)
 
     
     @api.depends('productos','cantidad','iva')
@@ -25,13 +25,12 @@ class detallepedido_model(models.Model):
             i.base=i.productos.precio*i.cantidad
             i.total = (((i.base*int(i.iva))/100)+i.base)
 
+            #solo para mostrar el precio del producto al crear una linea de detalle
+            i.precio=i.productos.precio
+
 
    
 
-    """@api.depends('productos')
-    def precioid(self):
-        self.ensure_one()
-        self.precio=self.productos.precio"""
    
 
 

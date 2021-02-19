@@ -18,10 +18,12 @@
                         <tree >
                           <field name="name"/>
                           
-                          <!--el precio no sale-->
-                          <field name="precio"/>
+                         
+                          
                         </tree> 
                       </field>
+
+                      <field name="precio"/>
 
                   </group>  
                   

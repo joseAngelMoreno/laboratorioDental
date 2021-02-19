@@ -12,6 +12,7 @@ class detaFac_model(models.Model):
     iva=fields.Selection(string="IVA",default="0",selection=[("21","21"),("10","10"),("4","4"),("0","0")] )
     base=fields.Float(string="Base",default=0,compute="calculaBase", store=True)
     total=fields.Float(string="Total",default=0,compute="calculaBase", store=True)
+    precio=fields.Float(string="Precio Unidad",compute="calculaBase", store=True)
 
 
 
@@ -22,13 +23,10 @@ class detaFac_model(models.Model):
             i.base=i.precios_id.precio*i.cantidad
             i.total = (((i.base*int(i.iva))/100)+i.base)
 
-    """
-    @api.depends('iva', 'precios_id','cantidad')
-    def calculaTotal(self):
-        self.ensure_one()
-        self.total = (((self.base*int(self.iva))/100)+self.base)
+            #solo para mostrar el precio del producto al crear una linea de detalle
+            i.precio=i.precios_id.precio
 
-    """
+    
 
 
 

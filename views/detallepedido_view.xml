@@ -13,13 +13,15 @@
                 <sheet>
 
                   <group >
+                    
                       <field name="productos" >
                         <tree >
                           <field name="name"/>
-                          <field name="precio"/>
+                          
                         </tree> 
+                        
                       </field>
-                      
+                      <field name="precio"/>
                   </group>  
                   
 
@@ -28,6 +30,8 @@
                         <field name="base"/>
                         <field name="iva"/>
                         <field name="total"/>
+                        
+                        
                     </group>     
                     
                   
