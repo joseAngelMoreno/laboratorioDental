@@ -16,7 +16,7 @@ class clientes_model(models.Model):
     telefono=fields.Char(string="Telefono",required=True,size=9)
     foto=fields.Binary(string="Foto")
     facturas=fields.One2many("laboratorio_dental.facturas_model","cliente_id",string="factura")
-    trabajadores=fields.Many2many("laboratorio_dental.trabajadores_model",relation="tra2cli_rel",string="trabajadores")
+    trabajadores=fields.Many2many("laboratorio_dental.trabajadores_model",relation="tra2cli_rel",string="Empleados")
 
     @api.constrains("email")
     def es_correo_valido(self):

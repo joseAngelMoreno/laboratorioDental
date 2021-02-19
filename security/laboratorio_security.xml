@@ -1,0 +1,31 @@
+<odoo>
+    <record id="module_laboratorio_category" model="ir.module.category">
+        <field name="name">Laboratorio</field>
+    </record>
+
+    <!-- laboratorio Encargados -->
+    <record id="laboratorio_group_encar" model="res.groups">
+        <field name="name">Encargados</field>
+        <field name="category_id" ref="module_laboratorio_category"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+
+    <!-- Laboratorio Empleados -->
+    <record id="laboratorio_group_emple" model="res.groups">
+        <field name="name">Empleados</field>
+        <field name="category_id" ref="module_laboratorio_category"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+    
+
+    <!-- laboratorio Clientes -->
+    <record id="laboratorio_group_clien" model="res.groups">
+        <field name="name">Clientes</field>
+        <field name="category_id" ref="module_laboratorio_category"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    
+
+</odoo>

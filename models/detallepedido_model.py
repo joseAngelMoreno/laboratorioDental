@@ -15,21 +15,18 @@ class detallepedido_model(models.Model):
     base=fields.Float(string="Base",default=0)
     total=fields.Float(string="Total",default=0)
     base=fields.Float(string="Base",default=0,compute="calculaBase", store=True)
-    total=fields.Float(string="Total",default=0,compute="calculaTotal", store=True)
+    total=fields.Float(string="Total",default=0,compute="calculaBase", store=True)
     #precio=fields.Float(string="Precio",compute="precioid", store=True)
 
-    @api.depends('productos','cantidad')
+    
+    @api.depends('productos','cantidad','iva')
     def calculaBase(self):
-        self.ensure_one()
-        suma = 0
-        suma=self.productos.precio*self.cantidad
-        self.base = suma
+        for i in self:
+            i.base=i.productos.precio*i.cantidad
+            i.total = (((i.base*int(i.iva))/100)+i.base)
 
 
-    @api.depends('iva', 'productos','cantidad')
-    def calculaTotal(self):
-        self.ensure_one()
-        self.total = (((self.base*int(self.iva))/100)+self.base)
+   
 
     """@api.depends('productos')
     def precioid(self):
